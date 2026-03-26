@@ -193,3 +193,214 @@ body::before {
   background-size: 40px 40px;
   z-index: -1;
 }
+
+/* Make nav stick to top */
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  background: #020617;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+ 
+body {
+  scroll-padding-top: 70px; /* height of your nav + small buffer */
+}
+.sticky-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.sticky-nav li {
+  margin: 0 1.5rem;
+}
+
+.sticky-nav a {
+  display: block;
+  padding: 1rem;
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+.sticky-nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 8px;
+  left: 0;
+  background-color: var(--accent);
+  transition: 0.3s;
+}
+
+.sticky-nav a:hover {
+  color: var(--accent-soft);
+}
+
+.sticky-nav a:hover::after {
+  width: 100%;
+}
+
+.projects-page header {
+  background: linear-gradient(rgba(15,23,42,0.6), rgba(15,23,42,0.6)), url('./images/zumobot.JPG') no-repeat center center;
+  background-size: cover;
+}
+
+.projects-page header img {
+  display: none; /* hide the <img> tag since we're using CSS background now */
+}
+
+/* Footer social links */
+footer .footer-social-links {
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+footer .footer-social-links a {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: 0.3s;
+  color: var(--text-main);
+  background-color: var(--bg-card);
+  border: 1px solid var(--accent);
+}
+
+footer .footer-social-links a.github:hover {
+  background-color: #333; /* GitHub dark */
+  color: #fff;
+}
+
+footer .footer-social-links a.linkedin:hover {
+  background-color: #0a66c2; /* LinkedIn blue */
+  color: #fff;
+}
+
+#about {
+  position: relative;
+  overflow: hidden;
+}
+
+#about .section-bg-video {
+ position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 177vh;   /* 16/9 ratio scaled to viewport height */
+  height: 100vw;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  opacity: 0.15;
+  z-index: 0;
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+#about h2,
+#about p {
+  position: relative;
+  z-index: 1;          /* keeps text above the video */
+}
+
+/* ================== TYPING CURSOR ================== */
+.cursor {
+  display: inline-block;
+  color: var(--accent);
+  animation: blink 0.7s step-end infinite;
+  font-weight: 300;
+  font-size: 1.1em;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ================== MOBILE RESPONSIVENESS ================== */
+@media (max-width: 768px) {
+
+  /* Header */
+  header {
+    padding: 4rem 1rem 2rem 1rem;
+    min-height: 60vh;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  /* Nav */
+  .sticky-nav ul {
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 0.3rem 0;
+  }
+
+  .sticky-nav li {
+    margin: 0 0.5rem;
+  }
+
+  .sticky-nav a {
+    padding: 0.6rem 0.4rem;
+    font-size: 0.9rem;
+  }
+
+  /* Sections */
+  section {
+    margin: 1.2rem 0.8rem;
+    padding: 1.2rem;
+  }
+
+  /* Resume iframe */
+  #resume iframe {
+    height: 500px;
+  }
+
+  /* Photos */
+  #photos img {
+    width: 90%;
+    margin: 0.5rem auto;
+    display: block;
+  }
+
+  /* Footer social links */
+  footer .footer-social-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .sticky-nav a {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.3rem;
+  }
+
+  section {
+    margin: 1rem 0.5rem;
+    padding: 1rem;
+  }
+}
