@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shahzadfuze.dev - Projects</title>
   <link rel="stylesheet" href="./style.css">
+
 </head>
-<body class="projects-page">>
+
+
+<body class="projects-page">
   <nav class="sticky-nav">
     <ul>
       <li><a href="index.html#about">whoami</a></li>
@@ -27,12 +30,59 @@
 
   <section id="projects">
     <h2>My Projects</h2>
-    <ul>
-      <li><strong>GPU Acceleration Pipeline:</strong> Real-time image processing using CUDA and Python.</li>
-      <li><strong>Embedded System Design:</strong> Hybrid hardware/software system for data acquisition.</li>
-      <li><strong>Computer Vision Project:</strong> Object detection using OpenCV and TensorFlow.</li>
-      <!-- Add more projects here -->
-    </ul>
+
+    <div class="project-container">
+
+      <div class="project-card">
+        <div class="project-title">
+          <h3>Neural Network from Scratch</h3>
+        </div>
+        
+        <div class="project-content">
+          
+          
+        <p>Impliemented a 3 layer neural network from scratch and distributed the load across 4 GPUs using CUDA</p>
+        <p> No backtracking so its just the raw computation of the forward pass and the backpropagation.</p>
+        <p>Allowed for me to understand the underlying mechanics of neural networks. As well as how to allocate jobs to multiple GPUs.</p>
+        </div>
+      </div>
+  
+      <div class = "project-card">
+        <div class="project-title">
+          <h3>Musical Light Show</h3>
+        </div>
+        <div class="project-content">
+         
+        <p>Designed and built a circuit taking a dual channel audio input ranging from 0-16kHz.</p>
+        <p>           Combinding the 
+            signal and sending them through 2 seperate low pass and high pass filters. 
+            Allowing for 2 different LEDs to light up based off the frequency components</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-title">
+          <h3>Dual Tone Multi-Freqenecy Decoder</h3>
+        </div>
+        <div class="project-content">
+         
+        <p>Implemented a dual-tone multi-frequency (DTMF) decoder using Python and multiple IIR filters.</p>
+        <p>This project was a fun way to apply digital signal processing concepts and understand how telecommunication systems work.</p>
+        <p>Using Python and multiple IIR filters to decode dual-tone multi-frequency (DTMF) signals.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-title">
+          <h3>Bat Box</h3>
+        </div>
+        <div class="project-content">
+        
+        <p>Developed a project for High schoolers had them place sensors in a custom wooden batbox to monitor the humidity, temperature, and light levels.</p>
+        <p>The data was contained on a microcontroller then using radio frequency communication the data was sent to a base station where it was stored and visualized on a dashboard.</p>
+        </div>
+      </div>
+      </div>
   </section>
 
   <footer>
@@ -43,5 +93,8 @@
     <a href="https://www.linkedin.com/in/shahzad-khan000/" target="_blank" class="linkedin">LinkedIn</a>
   </div>
   </footer>
+    <script src="script.js"></script>
 </body>
+
 </html>
+
